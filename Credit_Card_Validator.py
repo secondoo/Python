@@ -43,7 +43,7 @@ class CreditCard:
     def validate(self):
         #double every second digit from right to left
         sum_=0
-        crd_no = self.card_no[::-1]
+        crd_no = str(self.card_no)[::-1]
         for i in range(len(crd_no)):
             if i%2==1:
                 double_it = int(crd_no[i])*2
@@ -58,7 +58,6 @@ class CreditCard:
                 sum_+=int(crd_no[i])
 
 
-
         if sum_%10==0:
             response = "Valid Card"
         else:
@@ -70,7 +69,8 @@ class CreditCard:
 
     @property
     def checksum(self):
-        return '#CHECKSUM# : '+self.card_no[-1]
+        x=str(self.card_no)
+        return '#CHECKSUM# : ' + x[-1]
 
 
     @classmethod
@@ -82,10 +82,9 @@ class CreditCard:
 card_number  = input()
 card = CreditCard.set_card(card_number)
 #print(card.company)
-#print('Card : ',card.card_no)
 #print card.first_check()
 #print card.checksum
-#print card.validate()
+print card.validate()
 
 
 
