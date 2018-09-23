@@ -30,7 +30,7 @@ class CreditCard:
 
 
     def first_check(self):
-        if 13<=len(self.card_no)<=19:
+        if 13<=len(str(self.card_no))<=19:
             message = "First check : Valid in terms of length."
 
         else:
@@ -81,11 +81,11 @@ class CreditCard:
 
 card_number  = input()
 card = CreditCard.set_card(card_number)
-print(card.company)
-print('Card : ',card.card_no)
-print(card.first_check())
-print(card.checksum)
-print(card.validate())
+#print(card.company)
+#print('Card : ',card.card_no)
+#print card.first_check()
+#print card.checksum
+#print card.validate()
 
 
 
