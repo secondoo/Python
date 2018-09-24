@@ -81,9 +81,9 @@ class CreditCard:
 
 card_number  = input()
 card = CreditCard.set_card(card_number)
-#print(card.company)
-#print card.first_check()
-#print card.checksum
+print card.company
+print card.first_check()
+print card.checksum
 print card.validate()
 
 
